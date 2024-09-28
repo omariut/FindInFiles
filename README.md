@@ -1,12 +1,15 @@
+
+
 # FindInFiles
 
-FindInFiles is a smart chatbot that helps you quickly retrieve information from  document. Simply place your files in a folder, ask your question, and the bot will search the content to provide precise answers. It's an efficient solution for professionals, students, and researchers to streamline document searching and save time.
+FindInFiles is a smart chatbot that helps you quickly retrieve, search, and summarize information from documents. Simply place your files in a folder (docs), ask your question, search for specific words, or request a summary, and the bot will process the content to provide precise responses. It's an efficient solution for professionals, students, and researchers to streamline document analysis and save time.
 
 ## Features
 
-- **Intelligent Search**: Utilizes advanced language models to understand and answer questions based on document content.
-- **Chat Interface**: Engage in a conversational manner to refine your queries and get more accurate results.
-- **Search Mode**: Quickly locate specific information within documents.
+- **Intelligent Chat**: Engage in a conversational manner to ask questions and get accurate answers based on document content.
+- **Quick Search**: Rapidly locate specific words or phrases within documents.
+- **Document Summarization**: Generate concise summaries of document content.
+- **Advanced Language Model**: Utilizes state-of-the-art natural language processing to understand and process queries.
 
 ## Installation
 
@@ -34,26 +37,40 @@ FindInFiles is a smart chatbot that helps you quickly retrieve information from 
 
 2. Send POST requests to `http://localhost:5000/process` with the following JSON structure:
 
-- for chat
+   For chat mode:
    ```json
    {
      "query": "Your question here",
      "mode": "chat"
    }
    ```
-- for search
+
+   For search mode:
    ```json
    {
      "query": "search word",
-     "mode": "search" 
+     "mode": "search"
    }
    ```
 
-3. The server will respond with the answer or search results based on the `info.txt` in the `docs` folder.
+   For summary mode:
+   ```json
+   {
+     "query": "Number of lines for summary",
+     "mode": "summary"
+   }
+   ```
+
+3. The server will respond with the answer, search results, or summary based on the documents in the `docs` folder.
 
 ## Configuration
 
-- Adjust the `config.py` file to change the language model or other settings.
-- Modify `retrievers.py` to customize document loading and splitting behavior.
+- Place your documents in the `docs` folder.
+- Adjust the `max_history_size` in `chains.py` to control the chat history length.
+- Modify the `chunk_size` and `chunk_overlap` in `retrievers.py` to fine-tune document processing.
+
+
+
+
 
 
