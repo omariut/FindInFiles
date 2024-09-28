@@ -7,7 +7,9 @@ from langchain.chains import create_history_aware_retriever
 from langchain_community.document_loaders import TextLoader
 from config import llm
 
-loader = TextLoader("docs/info.txt")
+from langchain_community.document_loaders import DirectoryLoader
+
+loader = DirectoryLoader("docs", glob="**/*.txt", loader_cls=TextLoader)
 docs = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
