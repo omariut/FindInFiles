@@ -41,6 +41,8 @@ search_system_prompt=(
     "count:total_word_count,lines:[line1,line2,line3],"
     "here line is the text on the line from the document that contains the search term"
     "don't include the lines that don't contain the search term"
+    "keep in mind that it is not a semantic search, so don't consider the context of the lines"
+    "keep the word inside ''"
     "your response should be in json format only"
     "if the search term is not found, return 'not found'"
     "return only the result, no need of any other text"
