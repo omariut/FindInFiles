@@ -1,9 +1,10 @@
-from prompts import qa_prompt,search_prompt
+from prompts import qa_prompt,search_prompt,summary_prompt
 from retrievers import history_aware_retriever
 from langchain.chains import create_retrieval_chain
 from config import llm
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.messages import HumanMessage, SystemMessage
+import json
 
 chat_history = []  # Collect chat history here (a sequence of messages)
 max_history_size = 10  # Limit chat history to the last 10 messages
@@ -32,8 +33,20 @@ def search_chain(query):
     
     if not search_results:
         return f"No relevant documents found for '{query}'"
-    return search_results["answer"]
+    search_results = search_results["answer"]
+    response = search_results.strip('```json').strip('```')
+    return json.loads(response)
 
+    # Now convert it into a proper JSON format
+
+
+
+def summary_chain(query):
+    """Summary processing chain"""
+    summary_chain = create_stuff_documents_chain(llm, summary_prompt)
+    summary_chain = create_retrieval_chain(history_aware_retriever, summary_chain)
+    summary_results = summary_chain.invoke({"input": query})
+    return summary_results["answer"]
 
 def router_chain(query, mode="chat"):
     """Router chain to determine the processing logic based on mode"""
@@ -41,5 +54,7 @@ def router_chain(query, mode="chat"):
         return chat_chain(query, chat_history)
     elif mode == "search":
         return search_chain(query)
+    elif mode == "summary":
+        return summary_chain(query)
     else:
         return "Invalid mode"
