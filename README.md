@@ -69,6 +69,28 @@ FindInFiles is a smart chatbot that helps you quickly retrieve, search, and summ
 - Adjust the `max_history_size` in `chains.py` to control the chat history length.
 - Modify the `chunk_size` and `chunk_overlap` in `retrievers.py` to fine-tune document processing.
 
+## Evaluation
+
+To evaluate the performance of the chatbot, you can run the following command:
+
+```
+python evals.py
+```
+
+This will perform an experiment and evaluate the results based on the specified evaluators.
+
+### Evaluation Config
+
+- The evaluators are in the `eval_utils/evaluators.py` file.You can add more evaluators to this file.
+- Dataset is in the `eval_utils/datasets.py` file. Modify the dataset to add more examples.
+- Experiment is in the `eval_utils/experiments.py` file.
+
+### Evaluation Results
+
+- The evaluation results will be displayed in the langsmith console.
+- Visit link that appears in the terminal to see the evaluation results.
+
+
 
 
 
