@@ -9,10 +9,14 @@ import json
 chat_history = []  # Collect chat history here (a sequence of messages)
 max_history_size = 10  # Limit chat history to the last 10 messages
 
-# Chat processing chain
-def chat_chain(query, chat_history):
+def get_rag_chain():
     question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
     rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+
+    return rag_chain
+# Chat processing chain
+def chat_chain(query,chat_history=None):
+    rag_chain=get_rag_chain()
     result = rag_chain.invoke({"input": query, "chat_history": chat_history})
     chat_history.append(HumanMessage(content=query))
     chat_history.append(SystemMessage(content=result["answer"]))
@@ -51,7 +55,7 @@ def summary_chain(query):
 def router_chain(query, mode="chat"):
     """Router chain to determine the processing logic based on mode"""
     if mode == "chat":
-        return chat_chain(query, chat_history)
+        return chat_chain(query, chat_history=chat_history)
     elif mode == "search":
         return search_chain(query)
     elif mode == "summary":

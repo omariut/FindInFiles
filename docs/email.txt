@@ -1,0 +1,28 @@
+Dear Recruiter,
+
+I hope this message finds you well. I am excited to express my keen interest in the Python Developer position. I'm eager to contribute my skills and passion for coding to your dynamic team.
+
+As a Python and Django enthusiast, I take pride in delivering top-notch projects within tight deadlines. My past experiences working on various projects, such as big e-commerce websites with inventory facilities, survey websites for brand promotions, microservice projects for social marketing solutions, and 'live chat application' for an ERP, have equipped me with a diverse skill set in web development.
+
+Although I have beginner-level experience in AWS, I am enthusiastic about cloud computing and have explored some essential services like Amazon EC2, S3, RDS, Redis, SQS, Elastic Beanstalk, and CloudWatch. I am eager to learn and expand my AWS knowledge to contribute effectively to cloud-based projects.
+
+I believe in the power of clean code and optimizing queries for better performance, which allows for seamless collaboration and easy code understanding for future developers.
+
+Please find some of my notable projects below:
+
+1. [Food_Subway](https://github.com/omariut/Food_Subway) - An e-commerce website developed with Django REST Framework.
+2. [Schedule-Balance-Transfer-API](https://github.com/omariut/Schedule-Balance-Transfer-API) - A RESTful API powered by Celery, Redis, and UnitTest for efficient balance transfers.
+3. [Social_Media_Website](https://github.com/omariut/Social_Media_Website) - A Django project showcasing social media features using Django Templates and Signals.
+4. [Watch-shop](https://github.com/omariut/Watch-shop) - An online watch shop built with Django.
+
+I have attached my CV for your reference, which outlines my educational background, professional experience, and detailed skills. I am confident that my technical expertise and enthusiasm for coding would make a valuable contribution to your team.
+
+Thank you for considering my application. I am eager to be a part of your team and contribute to the success of  your team. I look forward to discussing my passion for coding and how my skills align with your requirements during an interview.
+
+Warm regards,
+Md. Omar Faruk
+Software Engineer
+Phone: +8801683560152
+Email: omar.iut.09@gmail.com
+LinkedIn:  linkedin.com/in/omariut
+GitHub: www.github.com/omariut
